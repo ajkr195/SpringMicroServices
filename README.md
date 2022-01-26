@@ -1,5 +1,5 @@
 # SpringMicroServices
-SpringBoot Micro Services, Discovery Server, Discovery Client, API-Gateway, Circuit Breaker
+SpringBoot Micro Services, Discovery Server, Discovery Client, API-Gateway (Load-Balancing), Circuit Breaker
 
 
 # Main URIs:
