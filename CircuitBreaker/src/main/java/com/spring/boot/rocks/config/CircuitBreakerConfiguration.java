@@ -13,7 +13,7 @@ import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 public class CircuitBreakerConfiguration {
 
 	@Bean
-	public CircuitBreaker countCircuitBreaker() {
+	public CircuitBreaker timeCircuitBreaker() {
 		CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
 				.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.TIME_BASED).slidingWindowSize(10)
 				.slowCallRateThreshold(65.0f).slowCallDurationThreshold(Duration.ofSeconds(3)).build();
@@ -23,7 +23,7 @@ public class CircuitBreakerConfiguration {
 	}
 
 	@Bean
-	public CircuitBreaker timeCircuitBreaker() {
+	public CircuitBreaker countCircuitBreaker() {
 		CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
 				.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED).minimumNumberOfCalls(3)
 				.slidingWindowSize(10).failureRateThreshold(70.0f).waitDurationInOpenState(Duration.ofSeconds(10))
