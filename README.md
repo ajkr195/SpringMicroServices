@@ -20,6 +20,7 @@ http://localhost:8002/service2/message
 
 # Load Balanced (API - Gateway)
 http://localhost:8003/service1/message
+
 http://localhost:8003/service2/message
 
 # Circuit Breaker
