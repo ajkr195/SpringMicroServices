@@ -37,12 +37,12 @@ public class AppUserManager {
 					new ParameterizedTypeReference<List<AppUser>>() {
 					});
 			if (responseEntity != null && responseEntity.hasBody()) {
-//				try {
-//					Thread.sleep(3000);
-//				} catch (InterruptedException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				LOGGER.info("Total time to retrieve results = {}", System.currentTimeMillis() - startTime);
 				return responseEntity.getBody();
 			}
