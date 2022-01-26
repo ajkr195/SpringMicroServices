@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:8080/api";
+const baseURL = "http://localhost:8000/api";
 
 function htmlizeResponse(res) {
 	return (
