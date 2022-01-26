@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: CloudEurekaDiscoveryServer
+
+server:
+  port: 8761
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka
+
+#  server:
+#    wait-time-in-ms-when-sync-empty: 0
+#    enableSelfPreservation: false
+#    renewalPercentThreshold: 0.33
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include:
+        - '*'
+
+spring.output.ansi.enabled: ALWAYS
