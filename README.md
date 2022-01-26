@@ -25,3 +25,6 @@ http://localhost:8003/service2/message
 
 # Circuit Breaker
 http://localhost:8004/home
+
+<h3> SpringMicroServices Eureka Server </h3>
+![springbootrocks](https://github.com/ajkr195/SpringMicroServices/blob/main/SpringMicroServices.jpg)
