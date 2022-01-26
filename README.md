@@ -27,3 +27,6 @@ http://localhost:8003/service2/message
 http://localhost:8004/home
 
 
+<h3> SpringMicroServices Eureka Discovery Server</h3>
+
+![springbootrocks](https://github.com/ajkr195/SpringMicroServices/blob/main/SpringMicroServices.jpg)
