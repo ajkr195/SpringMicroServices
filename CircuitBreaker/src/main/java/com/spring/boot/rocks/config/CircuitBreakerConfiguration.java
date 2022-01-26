@@ -13,23 +13,23 @@ import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
 public class CircuitBreakerConfiguration {
 
 	@Bean
-	public CircuitBreaker timeCircuitBreaker() {
+	public CircuitBreaker countCircuitBreaker() {
 		CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
-				.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.TIME_BASED).slidingWindowSize(10)
+				.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED).slidingWindowSize(10)
 				.slowCallRateThreshold(65.0f).slowCallDurationThreshold(Duration.ofSeconds(3)).build();
 		CircuitBreakerRegistry circuitBreakerRegistry = CircuitBreakerRegistry.of(circuitBreakerConfig);
-		CircuitBreaker cb = circuitBreakerRegistry.circuitBreaker("AppUserSearchServiceBasedOnTime");
+		CircuitBreaker cb = circuitBreakerRegistry.circuitBreaker("AppUsersSearchServiceBasedOnCount");
 		return cb;
 	}
 
 	@Bean
-	public CircuitBreaker countCircuitBreaker() {
+	public CircuitBreaker timeCircuitBreaker() {
 		CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
-				.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED).minimumNumberOfCalls(3)
+				.slidingWindowType(CircuitBreakerConfig.SlidingWindowType.TIME_BASED).minimumNumberOfCalls(3)
 				.slidingWindowSize(10).failureRateThreshold(70.0f).waitDurationInOpenState(Duration.ofSeconds(10))
 				.build();
 		CircuitBreakerRegistry circuitBreakerRegistry = CircuitBreakerRegistry.of(circuitBreakerConfig);
-		CircuitBreaker cb = circuitBreakerRegistry.circuitBreaker("AppUsersSearchServiceBasedOnCount");
+		CircuitBreaker cb = circuitBreakerRegistry.circuitBreaker("AppUserSearchServiceBasedOnTime");
 		return cb;
 	}
 }
